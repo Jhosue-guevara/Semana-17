@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <title>Agregar Venta</title>
+</head>
+<body class="container mt-5">
+
+    <h2>Agregar Venta</h2>
+
+    <form method="post" action="{% url 'agregar_venta' %}" class="mb-4">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="{{ form.Fecha.id_for_label }}" class="form-label">Fecha</label>
+            {{ form.Fecha }}
+        </div>
+
+        <div class="mb-3">
+            <label for="{{ form.Monto.id_for_label }}" class="form-label">Monto</label>
+            {{ form.Monto }}
+        </div>
+
+        <div class="mb-3">
+            <label for="{{ form.Clienteid.id_for_label }}" class="form-label">Cliente</label>
+            {{ form.Clienteid }}
+        </div>
+
+        <div class="mb-3">
+            <label for="{{ form.Empleadoid.id_for_label }}" class="form-label">Empleado</label>
+            {{ form.Empleadoid }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Agregar Venta</button>
+
+        <h2>Listado de Ventas</h2>
+    <a href="{% url 'lista_ventas' %}" class="btn btn-secondary">Ver ventas</a>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-rv3tc5PcHpzD7Xsc3HjHrOpG9EMBY0LT9aPIsNFAJkMI5lrVvlHgAz7H6Ti1wCb6" crossorigin="anonymous"></script>
+
+</body>
+</html>

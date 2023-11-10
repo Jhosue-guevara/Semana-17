@@ -22,10 +22,12 @@ from App1.views import agregar_cliente
 
 
 urlpatterns = [
+    
     path('admin/', admin.site.urls),
+    # Incluye las URLs de tu aplicación App1
     path('', include('App1.urls')), 
          path('', agregar_cliente, name='home'),  # La vista agregar_cliente se convierte en la página de inicio
- # Incluye las URLs de tu aplicación App1
+ 
 ]
 
 
